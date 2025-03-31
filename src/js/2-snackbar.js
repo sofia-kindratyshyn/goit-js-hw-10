@@ -9,8 +9,10 @@ function onHandleSubmit(event) {
   event.preventDefault();
   const delay = form.elements.delay.value;
   const promise = new Promise((resolve, reject) => {
+    const state = form.elements.state.value;
+
     setTimeout(() => {
-      if (form.elements.state.value == 'fulfilled') {
+      if (state == 'fulfilled') {
         resolve(`Fulfilled promise in ${delay}ms`);
       } else {
         reject(`Rejected promise in ${delay}ms`);
